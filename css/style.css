@@ -171,7 +171,7 @@ img{max-width:100%;display:block}
 @keyframes blink-cursor{0%,100%{opacity:1}50%{opacity:0}}
 
 /* === CH2: Explosion === */
-.explosion-container{width:100%;height:300px;position:relative;display:flex;align-items:center;justify-content:center}
+.explosion-container{width:100%;height:300px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .explosion-center{position:absolute;z-index:2;transition:all .5s ease}
 .explosion-ripple{position:absolute;top:50%;left:50%;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:2.5px solid var(--accent);opacity:0;pointer-events:none;z-index:0;box-shadow:0 0 8px var(--accent-glow)}
 .chapter-block.visible .explosion-ripple{opacity:1;animation:ripple-wave 3s ease-out calc(.7s + var(--rd,0s)) infinite}
@@ -517,17 +517,18 @@ img{max-width:100%;display:block}
   .hero-title{font-size:clamp(2.2rem,10vw,3.2rem)}
   .hero-desc{font-size:.9rem}
   .hero-scroll-hint{display:none}
-  .chapter-block{padding:50px 16px;gap:24px}
-  .chapter-visual{min-height:180px}
-  .explosion-container{height:180px}
+  .chapter-block{padding:60px 16px;gap:32px}
+  .chapter-visual{min-height:200px}
+  .explosion-container{height:200px}
   .explosion-icon{width:30px;height:30px;font-size:1rem;border-radius:8px}
   .explosion-label{font-size:.75rem;bottom:-75px}
   .code-card-body{font-size:clamp(8px,2.5vw,11px)}
   .chapter-text .panel-title{font-size:clamp(1.3rem,6vw,1.8rem)}
   .chapter-text .panel-text{font-size:.9rem}
   .chapter-text .panel-cta-buttons .btn{width:100%;justify-content:center}
-  .chapter-text .panel-tags{gap:6px}
+  .chapter-text .panel-tags{gap:8px;margin-bottom:20px}
   .chapter-text .panel-tags span{font-size:.75rem;padding:3px 10px}
+  .chapter-text .panel-cta-buttons .btn{margin-bottom:10px}
   .api-body{font-size:clamp(8px,2vw,11px);min-height:170px}
   .api-body{padding:12px 14px}
   .page-header{padding:110px 0 40px}
@@ -543,7 +544,7 @@ img{max-width:100%;display:block}
   .project-banner{aspect-ratio:16/9}
   .section{padding:50px 0}
   .section-title{font-size:clamp(1.5rem,6vw,2rem)}
-  .footer-grid{grid-template-columns:1fr;gap:30px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
   .footer-links h4,.footer-contact h4{margin-bottom:14px;font-size:.95rem}
   .footer-links a,.footer-contact p{font-size:.8rem;margin-bottom:8px}
   .footer-bottom{font-size:.8rem;padding:20px 0}
@@ -604,7 +605,7 @@ img{max-width:100%;display:block}
   .floating-contact{bottom:12px;right:12px;gap:8px}
   .page-header{padding:90px 0 30px}
   .page-header h1{font-size:clamp(1.5rem,9vw,2rem)}
-  .footer-grid{gap:24px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
   .footer-social{gap:10px}
   .footer-social a{width:36px;height:36px;font-size:.85rem}
   .contact-info-item{padding:12px;gap:12px}
