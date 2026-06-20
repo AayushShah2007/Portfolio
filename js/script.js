@@ -29,10 +29,30 @@ window.addEventListener('scroll',()=>{
   if(fc)fc.classList.toggle('hidden',sy>=footerTop);
 });
 window.dispatchEvent(new Event('scroll')); // initial check
-if(hb){hb.addEventListener('click',()=>{nl.classList.toggle('open');hb.innerHTML=nl.classList.contains('open')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';document.body.classList.toggle('nav-open',nl.classList.contains('open'))});}
-ni.forEach(l=>l.addEventListener('click',()=>{nl.classList.remove('open');if(hb)hb.innerHTML='<i class="fas fa-bars"></i>';document.body.classList.remove('nav-open')}));
-// Close mobile nav on overlay click
-document.addEventListener('click',(e)=>{if(nl&&nl.classList.contains('open')&&!e.target.closest('#navbar')){nl.classList.remove('open');if(hb)hb.innerHTML='<i class="fas fa-bars"></i>';document.body.classList.remove('nav-open')}});
+function closeNav(){
+  nl.classList.remove('open');
+  const ov=document.querySelector('.nav-overlay');
+  if(ov)ov.classList.remove('visible');
+  if(hb)hb.innerHTML='<i class="fas fa-bars"></i>';
+  document.body.classList.remove('nav-open');
+}
+if(hb){
+  hb.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    const isOpen=nl.classList.toggle('open');
+    hb.innerHTML=isOpen?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
+    document.body.classList.toggle('nav-open',isOpen);
+    let ov=document.querySelector('.nav-overlay');
+    if(!ov){
+      ov=document.createElement('div');
+      ov.className='nav-overlay';
+      ov.addEventListener('click',closeNav);
+      document.body.appendChild(ov);
+    }
+    ov.classList.toggle('visible',isOpen);
+  });
+}
+ni.forEach(l=>l.addEventListener('click',closeNav));
 
 
 // === LOADING ===
