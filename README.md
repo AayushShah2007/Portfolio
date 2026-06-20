@@ -1,6 +1,7 @@
-# Aayush Shah — Portfolio Website
+# Aayush Shah — Full Stack Developer
 
-A scroll-driven portfolio with looping video backgrounds, glassmorphism chapter overlays, and an n8n-style sitemap workflow. Built with vanilla HTML, CSS, and JavaScript.
+
+Aayush Shah — Full Stack Developer. Scroll-driven portfolio built with vanilla HTML/CSS/JS featuring looping video backgrounds, glassmorphism chapter overlays, alternating left/right scene animations, and an interactive n8n-style sitemap workflow. 58 pages across Projects, Services, Blog (16 posts), Skills, and more. Fully responsive, SEO-optimized, and dark-mode only.
 
 ## Features
 
