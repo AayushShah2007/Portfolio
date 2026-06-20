@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Aayush Shah | Sitemap</title>
+<meta name="description" content="Sitemap for Aayush Shah's portfolio website — visual workflow page tree.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1f4bb;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://aayushshah.dev/sitemap.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Aayush Shah">
+<meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script></head>
+<body>
+
+<div id="loading-screen"><div class="loading-content"><div class="loading-spinner"></div><p class="loading-text">Loading...</p></div></div>
+<div id="page-transition" style="position:fixed;inset:0;z-index:99999;background:var(--primary);pointer-events:none;opacity:0;transition:opacity .4s"></div>
+<div id="scroll-progress"></div>
+
+<nav id="navbar">
+<div class="nav-container">
+<a href="index.html" class="nav-logo">Aayush Shah</a>
+<ul class="nav-links" id="nav-links">
+<li><a href="index.html" class="nav-link">Home</a></li>
+<li><a href="about.html" class="nav-link">About</a></li>
+<li><a href="sitemap.html" class="nav-link">Sitemap</a></li>
+<li><a href="projects/index.html" class="nav-link">Projects</a></li>
+<li><a href="services/index.html" class="nav-link">Services</a></li>
+<li><a href="blog/index.html" class="nav-link">Blog</a></li>
+<li><a href="contact.html" class="nav-link">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a href="https://wa.me/918369827417" target="_blank" rel="noopener" class="nav-icon-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="nav-icon-btn call-btn"><i class="fas fa-phone"></i></a>
+<a href="contact.html" class="hire-btn">Hire Me</a>
+<button id="hamburger" class="nav-icon-btn"><i class="fas fa-bars"></i></button>
+</div>
+</div>
+</nav>
+
+<section class="page-header">
+<div class="container">
+<h1>Site <span class="highlight">Workflow</span></h1>
+<p>Drag canvas &middot; Scroll to zoom &middot; Hover nodes to highlight paths</p>
+</div>
+</section>
+
+<!-- ===== CANVAS WRAPPER ===== -->
+<div class="st-canvas-wrap" id="stCanvasWrap">
+
+  <!-- Static label -->
+  <div class="st-label"><i class="fas fa-sitemap"></i> 58 pages &middot; Hover to trace connections</div>
+
+  <!-- Canvas -->
+  <div class="st-canvas" id="stViewport">
+
+    <!-- ROOT (full width) -->
+    <div class="st-row st-row-root">
+      <div class="st-n st-trigger" data-id="home" data-search="home index">
+        <div class="st-n-in"></div>
+        <a href="index.html" class="st-n-body">
+          <div class="st-n-icon"><i class="fas fa-house"></i></div>
+          <div class="st-n-info">
+            <div class="st-n-title">Home</div>
+            <div class="st-n-sub">Portfolio entry point</div>
+          </div>
+          <div class="st-n-dot active"></div>
+        </a>
+        <div class="st-n-out"></div>
+      </div>
+    </div>
+
+    <!-- BRANCH COLUMNS with child nodes -->
+    <div class="st-row st-row-branches">
+
+      <!-- Branch: Main Pages -->
+      <div class="st-col">
+        <div class="st-n st-branch" data-id="main-pages" data-search="main pages">
+          <div class="st-n-in"></div>
+          <a href="#main-pages" class="st-n-body" onclick="return false">
+            <div class="st-n-icon"><i class="fas fa-folder-open"></i></div>
+            <div class="st-n-info">
+              <div class="st-n-title">Main Pages</div>
+              <div class="st-n-sub">13 pages</div>
+            </div>
+            <div class="st-n-dot"></div>
+          </a>
+          <div class="st-n-out"></div>
+        </div>
+        <div class="st-children">
+          <div class="st-n st-child" data-id="about"><div class="st-n-in"></div><a href="about.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-user"></i></div><div class="st-n-info"><div class="st-n-title">About</div><div class="st-n-sub">About me</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="contact"><div class="st-n-in"></div><a href="contact.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-envelope"></i></div><div class="st-n-info"><div class="st-n-title">Contact</div><div class="st-n-sub">Get in touch</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="showcase"><div class="st-n-in"></div><a href="showcase.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-star"></i></div><div class="st-n-info"><div class="st-n-title">Showcase</div><div class="st-n-sub">Portfolio showcase</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="hire-me"><div class="st-n-in"></div><a href="hire-me.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-handshake"></i></div><div class="st-n-info"><div class="st-n-title">Hire Me</div><div class="st-n-sub">Hiring page</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="faq"><div class="st-n-in"></div><a href="faq.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-question-circle"></i></div><div class="st-n-info"><div class="st-n-title">FAQ</div><div class="st-n-sub">Frequently asked</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="testimonials"><div class="st-n-in"></div><a href="testimonials.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-comment"></i></div><div class="st-n-info"><div class="st-n-title">Testimonials</div><div class="st-n-sub">Client feedback</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="achievements"><div class="st-n-in"></div><a href="achievements.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-trophy"></i></div><div class="st-n-info"><div class="st-n-title">Achievements</div><div class="st-n-sub">Milestones</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="education"><div class="st-n-in"></div><a href="education.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-graduation-cap"></i></div><div class="st-n-info"><div class="st-n-title">Education</div><div class="st-n-sub">Academic background</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="experience-detail"><div class="st-n-in"></div><a href="experience-detail.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-briefcase"></i></div><div class="st-n-info"><div class="st-n-title">Experience</div><div class="st-n-sub">Work history</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="privacy"><div class="st-n-in"></div><a href="privacy-policy.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-shield-alt"></i></div><div class="st-n-info"><div class="st-n-title">Privacy Policy</div><div class="st-n-sub">Data &amp; privacy</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="terms"><div class="st-n-in"></div><a href="terms-of-service.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-contract"></i></div><div class="st-n-info"><div class="st-n-title">Terms</div><div class="st-n-sub">Terms of service</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="sitemap-page"><div class="st-n-in"></div><a href="sitemap.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-sitemap"></i></div><div class="st-n-info"><div class="st-n-title">Sitemap</div><div class="st-n-sub">Page workflow</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+        </div>
+      </div>
+
+      <!-- Branch: Services -->
+      <div class="st-col">
+<div class="st-n st-branch" data-id="services" data-search="services">
+          <div class="st-n-in"></div>
+          <a href="services/index.html" class="st-n-body">
+            <div class="st-n-icon"><i class="fas fa-cogs"></i></div>
+            <div class="st-n-info">
+              <div class="st-n-title">Services</div>
+              <div class="st-n-sub">10 pages</div>
+            </div>
+            <div class="st-n-dot"></div>
+          </a>
+          <div class="st-n-out"></div>
+        </div>
+        <div class="st-children">
+          <div class="st-n st-child" data-id="srv-overview"><div class="st-n-in"></div><a href="services/index.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-th-list"></i></div><div class="st-n-info"><div class="st-n-title">Overview</div><div class="st-n-sub">All services</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="srv-web"><div class="st-n-in"></div><a href="services/web-development.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-globe"></i></div><div class="st-n-info"><div class="st-n-title">Web Dev</div><div class="st-n-sub">Web development</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="srv-mobile"><div class="st-n-in"></div><a href="services/mobile-apps.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-mobile-alt"></i></div><div class="st-n-info"><div class="st-n-title">Mobile Apps</div><div class="st-n-sub">App development</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="srv-api"><div class="st-n-in"></div><a href="services/api-development.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-plug"></i></div><div class="st-n-info"><div class="st-n-title">API Dev</div><div class="st-n-sub">API development</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="srv-ui"><div class="st-n-in"></div><a href="services/ui-ux-design.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-paint-brush"></i></div><div class="st-n-info"><div class="st-n-title">UI/UX Design</div><div class="st-n-sub">Design services</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="srv-db"><div class="st-n-in"></div><a href="services/database-design.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-database"></i></div><div class="st-n-info"><div class="st-n-title">Database</div><div class="st-n-sub">DB design</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="srv-cloud"><div class="st-n-in"></div><a href="services/cloud-deployment.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-cloud"></i></div><div class="st-n-info"><div class="st-n-title">Cloud</div><div class="st-n-sub">Cloud deployment</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="srv-perf"><div class="st-n-in"></div><a href="services/performance-optimization.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-tachometer-alt"></i></div><div class="st-n-info"><div class="st-n-title">Perf Opt.</div><div class="st-n-sub">Performance</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="srv-maintenance"><div class="st-n-in"></div><a href="services/maintenance-support.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-tools"></i></div><div class="st-n-info"><div class="st-n-title">Maintenance</div><div class="st-n-sub">Support &amp; upkeep</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="srv-ai"><div class="st-n-in"></div><a href="services/ai-automation.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-robot"></i></div><div class="st-n-info"><div class="st-n-title">AI Automation</div><div class="st-n-sub">AI &amp; automation</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+        </div>
+      </div>
+
+      <!-- Branch: Projects -->
+      <div class="st-col">
+        <div class="st-n st-branch" data-id="projects" data-search="projects case studies">
+          <div class="st-n-in"></div>
+          <a href="projects/index.html" class="st-n-body">
+            <div class="st-n-icon"><i class="fas fa-code-branch"></i></div>
+            <div class="st-n-info">
+              <div class="st-n-title">Projects</div>
+              <div class="st-n-sub">11 pages</div>
+            </div>
+            <div class="st-n-dot"></div>
+          </a>
+          <div class="st-n-out"></div>
+        </div>
+        <div class="st-children">
+          <div class="st-n st-child" data-id="proj-overview"><div class="st-n-in"></div><a href="projects/index.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-th-list"></i></div><div class="st-n-info"><div class="st-n-title">Overview</div><div class="st-n-sub">All projects</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-eat"><div class="st-n-in"></div><a href="projects/eat-clock.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-utensils"></i></div><div class="st-n-info"><div class="st-n-title">EAT O'CLOCK</div><div class="st-n-sub">Cafe management</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-eventpass"><div class="st-n-in"></div><a href="projects/eventpass.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-ticket-alt"></i></div><div class="st-n-info"><div class="st-n-title">EventPass</div><div class="st-n-sub">Event ticketing</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-cs-eat"><div class="st-n-in"></div><a href="projects/case-study-eat-clock.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-book-open"></i></div><div class="st-n-info"><div class="st-n-title">CS: EAT O'CLOCK</div><div class="st-n-sub">Case study</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-cs-eventpass"><div class="st-n-in"></div><a href="projects/case-study-eventpass.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-book-open"></i></div><div class="st-n-info"><div class="st-n-title">CS: EventPass</div><div class="st-n-sub">Case study</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-timeline"><div class="st-n-in"></div><a href="projects/project-timeline.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-clock"></i></div><div class="st-n-info"><div class="st-n-title">Timeline</div><div class="st-n-sub">Project timeline</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-approach"><div class="st-n-in"></div><a href="projects/project-approach.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-lightbulb"></i></div><div class="st-n-info"><div class="st-n-title">Approach</div><div class="st-n-sub">Methodology</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-tech"><div class="st-n-in"></div><a href="projects/project-tech-stack.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-layer-group"></i></div><div class="st-n-info"><div class="st-n-title">Tech Stack</div><div class="st-n-sub">Technologies</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-gallery"><div class="st-n-in"></div><a href="projects/project-gallery.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-images"></i></div><div class="st-n-info"><div class="st-n-title">Gallery</div><div class="st-n-sub">Project images</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-testimonials"><div class="st-n-in"></div><a href="projects/project-testimonials.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-comment-dots"></i></div><div class="st-n-info"><div class="st-n-title">Testimonials</div><div class="st-n-sub">Feedback</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="proj-results"><div class="st-n-in"></div><a href="projects/project-results.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-chart-line"></i></div><div class="st-n-info"><div class="st-n-title">Results</div><div class="st-n-sub">Outcomes</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+        </div>
+      </div>
+
+      <!-- Branch: Skills -->
+      <div class="st-col">
+        <div class="st-n st-branch" data-id="skills" data-search="skills">
+          <div class="st-n-in"></div>
+          <a href="skills/index.html" class="st-n-body">
+            <div class="st-n-icon"><i class="fas fa-code"></i></div>
+            <div class="st-n-info">
+              <div class="st-n-title">Skills</div>
+              <div class="st-n-sub">9 pages</div>
+            </div>
+            <div class="st-n-dot"></div>
+          </a>
+          <div class="st-n-out"></div>
+        </div>
+        <div class="st-children">
+          <div class="st-n st-child" data-id="sk-overview"><div class="st-n-in"></div><a href="skills/index.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-th-list"></i></div><div class="st-n-info"><div class="st-n-title">Overview</div><div class="st-n-sub">All skills</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="sk-c"><div class="st-n-in"></div><a href="skills/c.html" class="st-n-body"><div class="st-n-icon"><i class="devicon-c-plain colored"></i></div><div class="st-n-info"><div class="st-n-title">C</div><div class="st-n-sub">Language</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="sk-cpp"><div class="st-n-in"></div><a href="skills/cpp.html" class="st-n-body"><div class="st-n-icon"><i class="devicon-cplusplus-plain colored"></i></div><div class="st-n-info"><div class="st-n-title">C++</div><div class="st-n-sub">Language</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="sk-csharp"><div class="st-n-in"></div><a href="skills/csharp.html" class="st-n-body"><div class="st-n-icon"><i class="devicon-csharp-plain colored"></i></div><div class="st-n-info"><div class="st-n-title">C#</div><div class="st-n-sub">Language</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="sk-html"><div class="st-n-in"></div><a href="skills/html-css.html" class="st-n-body"><div class="st-n-icon"><i class="devicon-html5-plain colored"></i></div><div class="st-n-info"><div class="st-n-title">HTML/CSS</div><div class="st-n-sub">Markup &amp; style</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="sk-js"><div class="st-n-in"></div><a href="skills/javascript.html" class="st-n-body"><div class="st-n-icon"><i class="devicon-javascript-plain colored"></i></div><div class="st-n-info"><div class="st-n-title">JavaScript</div><div class="st-n-sub">Language</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="sk-py"><div class="st-n-in"></div><a href="skills/python.html" class="st-n-body"><div class="st-n-icon"><i class="devicon-python-plain colored"></i></div><div class="st-n-info"><div class="st-n-title">Python</div><div class="st-n-sub">Language</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="sk-sql"><div class="st-n-in"></div><a href="skills/sql.html" class="st-n-body"><div class="st-n-icon"><i class="devicon-microsoftsqlserver-plain colored"></i></div><div class="st-n-info"><div class="st-n-title">SQL</div><div class="st-n-sub">Database</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="sk-next"><div class="st-n-in"></div><a href="skills/nextjs.html" class="st-n-body"><div class="st-n-icon"><i class="devicon-nextjs-plain"></i></div><div class="st-n-info"><div class="st-n-title">Next.js</div><div class="st-n-sub">Framework</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+        </div>
+      </div>
+
+      <!-- Branch: Blog -->
+      <div class="st-col">
+        <div class="st-n st-branch" data-id="blog" data-search="blog posts">
+          <div class="st-n-in"></div>
+          <a href="blog/index.html" class="st-n-body">
+            <div class="st-n-icon"><i class="fas fa-blog"></i></div>
+            <div class="st-n-info">
+              <div class="st-n-title">Blog</div>
+              <div class="st-n-sub">16 posts</div>
+            </div>
+            <div class="st-n-dot"></div>
+          </a>
+          <div class="st-n-out"></div>
+        </div>
+        <div class="st-children">
+          <div class="st-n st-child" data-id="blog-home"><div class="st-n-in"></div><a href="blog/index.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-home"></i></div><div class="st-n-info"><div class="st-n-title">Blog Home</div><div class="st-n-sub">All posts</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-next"><div class="st-n-in"></div><a href="blog/nextjs-16.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Next.js 16</div><div class="st-n-sub">Latest features</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-supabase"><div class="st-n-in"></div><a href="blog/supabase-api.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Supabase API</div><div class="st-n-sub">Backend guide</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-ts"><div class="st-n-in"></div><a href="blog/typescript-tips.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">TypeScript Tips</div><div class="st-n-sub">Best practices</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-trends"><div class="st-n-in"></div><a href="blog/web-dev-trends.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Web Dev Trends</div><div class="st-n-sub">2026 trends</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-rest"><div class="st-n-in"></div><a href="blog/rest-api-design.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">REST API</div><div class="st-n-sub">API design</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-css"><div class="st-n-in"></div><a href="blog/responsive-css.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Responsive CSS</div><div class="st-n-sub">CSS techniques</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-perf"><div class="st-n-in"></div><a href="blog/perf-optimization.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Perf Opt.</div><div class="st-n-sub">Performance tips</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-seo"><div class="st-n-in"></div><a href="blog/seo-guide.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">SEO Guide</div><div class="st-n-sub">SEO strategies</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-auth"><div class="st-n-in"></div><a href="blog/auth-patterns.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Auth</div><div class="st-n-sub">Auth patterns</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-realtime"><div class="st-n-in"></div><a href="blog/realtime-features.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Realtime</div><div class="st-n-sub">Live features</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-payment"><div class="st-n-in"></div><a href="blog/payment-integration.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Payments</div><div class="st-n-sub">Payment integration</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-deploy"><div class="st-n-in"></div><a href="blog/deployment-guide.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Deploy</div><div class="st-n-sub">Deployment guide</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-db"><div class="st-n-in"></div><a href="blog/database-design.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">DB Design</div><div class="st-n-sub">Database design</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-state"><div class="st-n-in"></div><a href="blog/state-management.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">State Mgmt</div><div class="st-n-sub">State management</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+          <div class="st-n st-child" data-id="blog-test"><div class="st-n-in"></div><a href="blog/testing-strategies.html" class="st-n-body"><div class="st-n-icon"><i class="fas fa-file-alt"></i></div><div class="st-n-info"><div class="st-n-title">Testing</div><div class="st-n-sub">Testing strategies</div></div><div class="st-n-dot"></div></a><div class="st-n-out"></div></div>
+        </div>
+      </div>
+
+    </div><!-- /st-row-branches -->
+
+  </div><!-- /canvas -->
+
+  <!-- SVG Connections -->
+  <svg class="st-svg" id="stSvg">
+    <defs>
+      <marker id="stArrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)" opacity=".5"/></marker>
+    </defs>
+    <g id="stSvgGroup"></g>
+  </svg>
+
+</div><!-- /canvas-wrap -->
+
+<section class="section" style="padding:40px 0">
+<div class="container" style="text-align:center">
+<p class="st-total"><i class="fas fa-file"></i> <strong>58 pages</strong> across 5 sections &middot; Drag canvas to explore &middot; Hover to trace connections</p>
+</div>
+</section>
+
+<footer id="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="index.html" class="footer-logo">Aayush Shah</a>
+<p>Full Stack Developer building fast, scalable modern web applications. Based in India.</p>
+<div class="footer-social">
+<a href="https://github.com/AayushShah2007" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<a href="mailto:Aayushshah458@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+<a href="https://wa.me/918369827417" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+<div class="footer-links">
+<h4>Explore</h4>
+<a href="index.html">Home</a>
+<a href="about.html">About Me</a>
+<a href="projects/index.html">Projects</a>
+<a href="services/index.html">Services</a>
+<a href="blog/index.html">Blog</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="footer-links">
+<h4>Skills</h4>
+<a href="skills/index.html">All Skills</a>
+<a href="skills/c.html">C</a>
+<a href="skills/cpp.html">C++</a>
+<a href="skills/csharp.html">C#</a>
+<a href="skills/python.html">Python</a>
+<a href="skills/javascript.html">JavaScript</a>
+<a href="skills/html-css.html">HTML &amp; CSS</a>
+<a href="skills/sql.html">SQL</a>
+<a href="skills/nextjs.html">Next.js</a>
+</div>
+<div class="footer-links">
+<h4>Projects</h4>
+<a href="projects/index.html">All Projects</a>
+<a href="projects/eat-clock.html">EAT O'CLOCK</a>
+<a href="projects/eventpass.html">EventPass</a>
+<a href="projects/project-timeline.html">Project Timeline</a>
+<a href="projects/project-gallery.html">Gallery</a>
+<a href="projects/project-tech-stack.html">Tech Stack</a>
+<a href="projects/case-study-eat-clock.html">Case Study: Eat Clock</a>
+<a href="projects/case-study-eventpass.html">Case Study: EventPass</a>
+</div>
+<div class="footer-links">
+<h4>Resources</h4>
+<a href="sitemap.html">Sitemap</a>
+<a href="faq.html">FAQ</a>
+<a href="hire-me.html">Hire Me</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="showcase.html">Showcase</a>
+<a href="achievements.html">Achievements</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms-of-service.html">Terms of Service</a>
+</div>
+<div class="footer-contact">
+<h4>Contact</h4>
+<p><i class="fas fa-envelope"></i> <a href="mailto:Aayushshah458@gmail.com">Aayushshah458@gmail.com</a></p>
+<p><i class="fas fa-phone"></i> <a href="tel:+918369827417">+91 83698 27417</a></p>
+<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918369827417" target="_blank">+91 83698 27417</a></p>
+<p><i class="fab fa-github"></i> <a href="https://github.com/AayushShah2007" target="_blank">AayushShah2007</a></p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>All right reserved to <span style="color:var(--accent)">&copy; Aayush Shah</span></p>
+</div>
+</div>
+</footer>
+
+<div class="floating-contact">
+<a href="https://wa.me/918369827417" target="_blank" class="floating-btn whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="floating-btn call-float"><i class="fas fa-phone"></i></a>
+<button id="back-to-top" class="floating-btn top-float"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/sitemap.js"></script>
+</body>
+</html>

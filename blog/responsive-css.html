@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mastering Responsive CSS — Aayush Shah</title>
+<meta name="description" content="Master responsive CSS with CSS Grid, Flexbox, container queries, and mobile-first design principles for modern web layouts.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1f4bb;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="canonical" href="https://aayushshah.dev/blog/responsive-css.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Aayush Shah">
+<meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script></head>
+<body>
+
+<div id="loading-screen"><div class="loading-content"><div class="loading-spinner"></div><p class="loading-text">Loading...</p></div></div>
+<div id="page-transition" style="position:fixed;inset:0;z-index:99999;background:var(--primary);pointer-events:none;opacity:0;transition:opacity .4s"></div>
+<div id="scroll-progress"></div>
+
+<nav id="navbar">
+<div class="nav-container">
+<a href="../index.html" class="nav-logo">Aayush Shah</a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../about.html" class="nav-link">About</a></li>
+<li><a href="../sitemap.html" class="nav-link">Sitemap</a></li>
+<li><a href="../projects/index.html" class="nav-link">Projects</a></li>
+<li><a href="../services/index.html" class="nav-link">Services</a></li>
+<li><a href="index.html" class="nav-link active">Blog</a></li>
+<li><a href="../contact.html" class="nav-link">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a href="https://wa.me/918369827417" target="_blank" rel="noopener" class="nav-icon-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="nav-icon-btn call-btn"><i class="fas fa-phone"></i></a>
+<a href="../contact.html" class="hire-btn">Hire Me</a>
+<button id="hamburger" class="nav-icon-btn"><i class="fas fa-bars"></i></button>
+</div>
+</div>
+</nav>
+
+<section class="page-header">
+<div class="container">
+<h1>Mastering Responsive CSS</h1>
+<p>Published: February 15, 2026 • 6 min read</p>
+</div>
+</section>
+
+<section class="section blog-post">
+<div class="container" style="max-width:800px;margin:0 auto">
+<article class="post-content">
+<p class="story-text">Responsive design is no longer optional. With users accessing the web from phones, tablets, laptops, and even smart displays, your layouts must adapt seamlessly across every viewport. The modern CSS toolkit — Grid, Flexbox, container queries, and clamp-based typography — gives us unprecedented control over responsive layouts without JavaScript. The key is adopting a mobile-first mindset and using progressive enhancement to layer in complexity for larger screens.</p>
+<p class="story-text">CSS Grid has revolutionized layout design. Instead of nesting flex containers, you define a grid template at the parent level and place children explicitly or automatically. I use the <code>auto-fit</code> and <code>minmax()</code> functions together to create responsive grids that require zero media queries: <code>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))</code>. This pattern automatically adjusts columns based on available space — on a phone you get one column, on a tablet two, on a desktop three or more. For more control, the <code>subgrid</code> feature lets child grids inherit row and column tracks from their parent, enabling perfectly aligned card layouts where images, titles, and CTAs line up regardless of content length.</p>
+<p class="story-text">Container queries are the most significant CSS advancement in years. Unlike media queries that respond to the viewport, container queries respond to the size of a parent container. This is game-changing for reusable components — a card component can query its container's width rather than making assumptions about its context. Using <code>@container (min-width: 400px)</code>, you can switch from a stacked to a side-by-side layout based on the available space within a grid cell or sidebar. Combined with the <code>cqw</code> and <code>cqi</code> units, you can size typography and spacing relative to the container rather than the viewport, creating truly context-aware components. Browser support for container queries is now universal, so there's no reason not to adopt them.</p>
+<p class="story-text">Fluid typography using <code>clamp()</code> eliminates the need for breakpoint-specific font sizes. Instead of <code>font-size: 1rem</code> on mobile and <code>1.5rem</code> on desktop, use <code>font-size: clamp(1rem, 0.5rem + 2vw, 1.5rem)</code>. The browser interpolates the value smoothly across all viewport widths. I use a CSS custom property approach where each text style is defined with its own clamp value, making global typography changes trivially easy. For the portfolio site itself, I pair <code>clamp()</code> with <code>container-type: inline-size</code> on section containers to ensure hero text looks proportionate in both wide and narrow layouts. Responsive CSS is no longer about fighting the browser — it's about leveraging modern CSS features to build layouts that feel naturally adaptive.</p>
+</article>
+
+<div class="post-tags" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:40px;padding-top:30px;border-top:1px solid var(--card-border)">
+<span class="card-tags"><span>CSS</span></span>
+<span class="card-tags"><span>Responsive Design</span></span>
+<span class="card-tags"><span>Frontend</span></span>
+</div>
+
+<div class="related-posts" style="margin-top:50px;padding-top:30px;border-top:1px solid var(--card-border)">
+<h2 class="section-title" style="margin-bottom:25px">Related <span class="highlight">Posts</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<a href="perf-optimization.html" class="card" style="text-decoration:none;color:inherit;display:block;padding:25px">
+<h3 style="margin-bottom:8px">Web Performance Optimization Guide</h3>
+<p style="font-size:.9rem;color:var(--text-light)">Core Web Vitals, lazy loading, and performance best practices.</p>
+<div style="margin-top:12px;color:var(--accent);font-weight:600;font-size:.85rem">Read More →</div>
+</a>
+<a href="seo-guide.html" class="card" style="text-decoration:none;color:inherit;display:block;padding:25px">
+<h3 style="margin-bottom:8px">SEO Guide for Modern Web Apps</h3>
+<p style="font-size:.9rem;color:var(--text-light)">Meta tags, structured data, SSR, and sitemaps for better search rankings.</p>
+<div style="margin-top:12px;color:var(--accent);font-weight:600;font-size:.85rem">Read More →</div>
+</a>
+</div>
+</div>
+
+<div class="post-cta" style="margin-top:50px;padding:40px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--border-radius);text-align:center">
+<h3 style="font-family:var(--font-heading);margin-bottom:12px">Want to discuss this topic?</h3>
+<p style="color:var(--text-light);margin-bottom:20px">Need help with responsive layouts or a design system? Let's collaborate.</p>
+<a href="../contact.html" class="btn btn-primary">Let's Talk</a>
+</div>
+</div>
+</section>
+
+<footer id="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="../index.html" class="footer-logo">Aayush Shah</a>
+<p>Full Stack Developer building fast, scalable modern web applications. Based in India.</p>
+<div class="footer-social">
+<a href="https://github.com/AayushShah2007" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<a href="mailto:Aayushshah458@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+<a href="https://wa.me/918369827417" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+<div class="footer-links">
+<h4>Explore</h4>
+<a href="../index.html">Home</a>
+<a href="../about.html">About Me</a>
+<a href="../projects/index.html">Projects</a>
+<a href="../services/index.html">Services</a>
+<a href="index.html">Blog</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-links">
+<h4>Skills</h4>
+<a href="../skills/index.html">All Skills</a>
+<a href="../skills/c.html">C</a>
+<a href="../skills/cpp.html">C++</a>
+<a href="../skills/csharp.html">C#</a>
+<a href="../skills/python.html">Python</a>
+<a href="../skills/javascript.html">JavaScript</a>
+<a href="../skills/html-css.html">HTML &amp; CSS</a>
+<a href="../skills/sql.html">SQL</a>
+<a href="../skills/nextjs.html">Next.js</a>
+</div>
+<div class="footer-links">
+<h4>Projects</h4>
+<a href="../projects/index.html">All Projects</a>
+<a href="../projects/eat-clock.html">EAT O'CLOCK</a>
+<a href="../projects/eventpass.html">EventPass</a>
+<a href="../projects/project-timeline.html">Project Timeline</a>
+<a href="../projects/project-gallery.html">Gallery</a>
+<a href="../projects/project-tech-stack.html">Tech Stack</a>
+<a href="../projects/case-study-eat-clock.html">Case Study: Eat Clock</a>
+<a href="../projects/case-study-eventpass.html">Case Study: EventPass</a>
+</div>
+<div class="footer-links">
+<h4>Resources</h4>
+<a href="../sitemap.html">Sitemap</a>
+<a href="../faq.html">FAQ</a>
+<a href="../hire-me.html">Hire Me</a>
+<a href="../testimonials.html">Testimonials</a>
+<a href="../showcase.html">Showcase</a>
+<a href="../achievements.html">Achievements</a>
+<a href="../privacy-policy.html">Privacy Policy</a>
+<a href="../terms-of-service.html">Terms of Service</a>
+</div>
+<div class="footer-contact">
+<h4>Contact</h4>
+<p><i class="fas fa-envelope"></i> <a href="mailto:Aayushshah458@gmail.com">Aayushshah458@gmail.com</a></p>
+<p><i class="fas fa-phone"></i> <a href="tel:+918369827417">+91 83698 27417</a></p>
+<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918369827417" target="_blank">+91 83698 27417</a></p>
+<p><i class="fab fa-github"></i> <a href="https://github.com/AayushShah2007" target="_blank">AayushShah2007</a></p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>All right reserved to <span style="color:var(--accent)">&copy; Aayush Shah</span></p>
+</div>
+</div>
+</footer>
+
+<div class="floating-contact">
+<a href="https://wa.me/918369827417" target="_blank" class="floating-btn whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="floating-btn call-float"><i class="fas fa-phone"></i></a>
+<button id="back-to-top" class="floating-btn top-float"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

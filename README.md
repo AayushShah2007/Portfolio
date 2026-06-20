@@ -1,8 +1,7 @@
-# Aayush Shah — Portfolio Website
+# Aayush Shah — Full Stack Developer
 
-**Full Stack Developer** building fast, scalable modern web applications with Next.js, TypeScript, and Supabase. Based in India.
 
-A scroll-driven portfolio with looping video backgrounds, glassmorphism chapter overlays, and an n8n-style sitemap workflow. Built with vanilla HTML, CSS, and JavaScript.
+Aayush Shah — Full Stack Developer. Scroll-driven portfolio built with vanilla HTML/CSS/JS featuring looping video backgrounds, glassmorphism chapter overlays, alternating left/right scene animations, and an interactive n8n-style sitemap workflow. 58 pages across Projects, Services, Blog (16 posts), Skills, and more. Fully responsive, SEO-optimized, and dark-mode only.
 
 ## Features
 
@@ -37,7 +36,7 @@ A scroll-driven portfolio with looping video backgrounds, glassmorphism chapter 
 │   ├── script.js              # Nav, animations, transitions, loading
 │   └── sitemap.js             # SVG connection lines for sitemap
 ├── projects/                  # Project case studies & detail pages
-├── services/                  # Service pages (10 services)
+├── services/                  # Service pages (9 services)
 ├── blog/                      # 16 blog posts
 ├── skills/                    # Individual skill pages
 ├── assets/
