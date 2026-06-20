@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SEO Guide for Modern Web Apps — Aayush Shah</title>
+<meta name="description" content="A complete SEO guide for modern web applications — meta tags, structured data, SSR, sitemaps, and technical SEO best practices.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1f4bb;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="canonical" href="https://aayushshah.dev/blog/seo-guide.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Aayush Shah">
+<meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script></head>
+<body>
+
+<div id="loading-screen"><div class="loading-content"><div class="loading-spinner"></div><p class="loading-text">Loading...</p></div></div>
+<div id="page-transition" style="position:fixed;inset:0;z-index:99999;background:var(--primary);pointer-events:none;opacity:0;transition:opacity .4s"></div>
+<div id="scroll-progress"></div>
+
+<nav id="navbar">
+<div class="nav-container">
+<a href="../index.html" class="nav-logo">Aayush Shah</a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../about.html" class="nav-link">About</a></li>
+<li><a href="../sitemap.html" class="nav-link">Sitemap</a></li>
+<li><a href="../projects/index.html" class="nav-link">Projects</a></li>
+<li><a href="../services/index.html" class="nav-link">Services</a></li>
+<li><a href="index.html" class="nav-link active">Blog</a></li>
+<li><a href="../contact.html" class="nav-link">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a href="https://wa.me/918369827417" target="_blank" rel="noopener" class="nav-icon-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="nav-icon-btn call-btn"><i class="fas fa-phone"></i></a>
+<a href="../contact.html" class="hire-btn">Hire Me</a>
+<button id="hamburger" class="nav-icon-btn"><i class="fas fa-bars"></i></button>
+</div>
+</div>
+</nav>
+
+<section class="page-header">
+<div class="container">
+<h1>SEO Guide for Modern Web Apps</h1>
+<p>Published: March 1, 2026 • 7 min read</p>
+</div>
+</section>
+
+<section class="section blog-post">
+<div class="container" style="max-width:800px;margin:0 auto">
+<article class="post-content">
+<p class="story-text">Search engine optimization for modern JavaScript applications is fundamentally different from traditional SEO. Search engines now execute JavaScript and index dynamic content, but they don't do it perfectly. Building an SEO-friendly web app requires understanding how Googlebot crawls, renders, and ranks pages, and designing your architecture to maximize discoverability. The stakes are high — organic search remains the largest source of traffic for most web applications.</p>
+<p class="story-text">Server-side rendering is the most important SEO decision for a web app. While Google can render JavaScript, SSR guarantees that the full HTML content is available in the initial response, eliminating any risk of poor indexing. Next.js makes this straightforward with its App Router — each route can be statically generated, server-rendered, or incrementally regenerated based on your content freshness needs. For the portfolio site, I statically generate the homepage and content pages while server-rendering dynamic routes. The <code>metadata</code> API in Next.js allows per-route title, description, Open Graph, and Twitter card configuration without touching the <code>&lt;head&gt;</code> manually. I also generate a <code>robots.txt</code> and XML sitemap automatically during the build process using the built-in sitemap generation API.</p>
+<p class="story-text">Structured data (JSON-LD) is an underutilized SEO lever that can dramatically improve search result appearance. By adding Schema.org markup to your pages, you enable rich results like breadcrumbs, FAQ snippets, article previews, and product details. I include JSON-LD blocks in the <code>&lt;head&gt;</code> for every blog post (Article schema), project (SoftwareApplication schema), and the homepage (Person schema with sameAs links to GitHub and social profiles). Google's Rich Results Test tool validates these snippets. The structured data also feeds into knowledge panels and voice search results, making it a high-value investment for a few extra lines of JSON.</p>
+<p class="story-text">Technical SEO fundamentals still matter immensely. Semantic HTML with proper heading hierarchy (one <code>h1</code> per page, nested <code>h2</code>/<code>h3</code> sections), descriptive link text, image alt attributes, and canonical URLs form the foundation. Core Web Vitals performance directly impacts ranking, so the performance optimizations discussed in my previous post have SEO benefits as well. I monitor SEO health with Lighthouse CI in the deployment pipeline, checking for meta tag presence, structured data validity, crawlability, and performance budgets. For single-page applications that can't use SSR, prerendering with tools like Prerender.io or using the Next.js static export ensures search engines see the full content. SEO is not a one-time setup — it's an ongoing practice of monitoring, testing, and iterating.</p>
+</article>
+
+<div class="post-tags" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:40px;padding-top:30px;border-top:1px solid var(--card-border)">
+<span class="card-tags"><span>SEO</span></span>
+<span class="card-tags"><span>Structured Data</span></span>
+<span class="card-tags"><span>SSR</span></span>
+</div>
+
+<div class="related-posts" style="margin-top:50px;padding-top:30px;border-top:1px solid var(--card-border)">
+<h2 class="section-title" style="margin-bottom:25px">Related <span class="highlight">Posts</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<a href="perf-optimization.html" class="card" style="text-decoration:none;color:inherit;display:block;padding:25px">
+<h3 style="margin-bottom:8px">Web Performance Optimization Guide</h3>
+<p style="font-size:.9rem;color:var(--text-light)">Core Web Vitals directly impact SEO rankings. Learn how to optimize them.</p>
+<div style="margin-top:12px;color:var(--accent);font-weight:600;font-size:.85rem">Read More →</div>
+</a>
+<a href="deployment-guide.html" class="card" style="text-decoration:none;color:inherit;display:block;padding:25px">
+<h3 style="margin-bottom:8px">Deployment Guide for Next.js Apps</h3>
+<p style="font-size:.9rem;color:var(--text-light)">Ensure your sitemap, robots.txt, and redirects are correctly configured in production.</p>
+<div style="margin-top:12px;color:var(--accent);font-weight:600;font-size:.85rem">Read More →</div>
+</a>
+</div>
+</div>
+
+<div class="post-cta" style="margin-top:50px;padding:40px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--border-radius);text-align:center">
+<h3 style="font-family:var(--font-heading);margin-bottom:12px">Want to discuss this topic?</h3>
+<p style="color:var(--text-light);margin-bottom:20px">Need an SEO audit or help optimizing your web app for search engines? Let's talk.</p>
+<a href="../contact.html" class="btn btn-primary">Let's Talk</a>
+</div>
+</div>
+</section>
+
+<footer id="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="../index.html" class="footer-logo">Aayush Shah</a>
+<p>Full Stack Developer building fast, scalable modern web applications. Based in India.</p>
+<div class="footer-social">
+<a href="https://github.com/AayushShah2007" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<a href="mailto:Aayushshah458@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+<a href="https://wa.me/918369827417" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+<div class="footer-links">
+<h4>Explore</h4>
+<a href="../index.html">Home</a>
+<a href="../about.html">About Me</a>
+<a href="../projects/index.html">Projects</a>
+<a href="../services/index.html">Services</a>
+<a href="index.html">Blog</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-links">
+<h4>Skills</h4>
+<a href="../skills/index.html">All Skills</a>
+<a href="../skills/c.html">C</a>
+<a href="../skills/cpp.html">C++</a>
+<a href="../skills/csharp.html">C#</a>
+<a href="../skills/python.html">Python</a>
+<a href="../skills/javascript.html">JavaScript</a>
+<a href="../skills/html-css.html">HTML &amp; CSS</a>
+<a href="../skills/sql.html">SQL</a>
+<a href="../skills/nextjs.html">Next.js</a>
+</div>
+<div class="footer-links">
+<h4>Projects</h4>
+<a href="../projects/index.html">All Projects</a>
+<a href="../projects/eat-clock.html">EAT O'CLOCK</a>
+<a href="../projects/eventpass.html">EventPass</a>
+<a href="../projects/project-timeline.html">Project Timeline</a>
+<a href="../projects/project-gallery.html">Gallery</a>
+<a href="../projects/project-tech-stack.html">Tech Stack</a>
+<a href="../projects/case-study-eat-clock.html">Case Study: Eat Clock</a>
+<a href="../projects/case-study-eventpass.html">Case Study: EventPass</a>
+</div>
+<div class="footer-links">
+<h4>Resources</h4>
+<a href="../sitemap.html">Sitemap</a>
+<a href="../faq.html">FAQ</a>
+<a href="../hire-me.html">Hire Me</a>
+<a href="../testimonials.html">Testimonials</a>
+<a href="../showcase.html">Showcase</a>
+<a href="../achievements.html">Achievements</a>
+<a href="../privacy-policy.html">Privacy Policy</a>
+<a href="../terms-of-service.html">Terms of Service</a>
+</div>
+<div class="footer-contact">
+<h4>Contact</h4>
+<p><i class="fas fa-envelope"></i> <a href="mailto:Aayushshah458@gmail.com">Aayushshah458@gmail.com</a></p>
+<p><i class="fas fa-phone"></i> <a href="tel:+918369827417">+91 83698 27417</a></p>
+<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918369827417" target="_blank">+91 83698 27417</a></p>
+<p><i class="fab fa-github"></i> <a href="https://github.com/AayushShah2007" target="_blank">AayushShah2007</a></p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>All right reserved to <span style="color:var(--accent)">&copy; Aayush Shah</span></p>
+</div>
+</div>
+</footer>
+
+<div class="floating-contact">
+<a href="https://wa.me/918369827417" target="_blank" class="floating-btn whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="floating-btn call-float"><i class="fas fa-phone"></i></a>
+<button id="back-to-top" class="floating-btn top-float"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

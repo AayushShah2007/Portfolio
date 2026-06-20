@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Testing Strategies for Web Applications — Aayush Shah</title>
+<meta name="description" content="A practical guide to testing web applications — unit tests with Vitest, integration tests, E2E testing with Playwright, and test-driven development.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1f4bb;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="canonical" href="https://aayushshah.dev/blog/testing-strategies.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Aayush Shah">
+<meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script></head>
+<body>
+
+<div id="loading-screen"><div class="loading-content"><div class="loading-spinner"></div><p class="loading-text">Loading...</p></div></div>
+<div id="page-transition" style="position:fixed;inset:0;z-index:99999;background:var(--primary);pointer-events:none;opacity:0;transition:opacity .4s"></div>
+<div id="scroll-progress"></div>
+
+<nav id="navbar">
+<div class="nav-container">
+<a href="../index.html" class="nav-logo">Aayush Shah</a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../about.html" class="nav-link">About</a></li>
+<li><a href="../sitemap.html" class="nav-link">Sitemap</a></li>
+<li><a href="../projects/index.html" class="nav-link">Projects</a></li>
+<li><a href="../services/index.html" class="nav-link">Services</a></li>
+<li><a href="index.html" class="nav-link active">Blog</a></li>
+<li><a href="../contact.html" class="nav-link">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a href="https://wa.me/918369827417" target="_blank" rel="noopener" class="nav-icon-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="nav-icon-btn call-btn"><i class="fas fa-phone"></i></a>
+<a href="../contact.html" class="hire-btn">Hire Me</a>
+<button id="hamburger" class="nav-icon-btn"><i class="fas fa-bars"></i></button>
+</div>
+</div>
+</nav>
+
+<section class="page-header">
+<div class="container">
+<h1>Testing Strategies for Web Applications</h1>
+<p>Published: March 18, 2026 • 8 min read</p>
+</div>
+</section>
+
+<section class="section blog-post">
+<div class="container" style="max-width:800px;margin:0 auto">
+<article class="post-content">
+<p class="story-text">A robust testing strategy is what separates professional software development from hobby projects. Tests give you the confidence to refactor, ship new features without fear of regression, and document expected behavior for your future self and your teammates. But not all tests are created equal — the testing pyramid (unit, integration, end-to-end) remains the best framework for deciding what to test and at what level.</p>
+<p class="story-text">Unit tests form the base of the pyramid. I use Vitest for unit testing React components, utility functions, and business logic. Vitest is compatible with the Vite ecosystem, runs faster than Jest, and has first-class TypeScript support. I focus unit tests on pure functions and isolated component behavior — utilities like date formatting, price calculations, and status transformations are ideal candidates. For React components, I use React Testing Library to test behavior rather than implementation: I query by role, label, or text rather than by component internals. The rule is simple — if a test breaks after a refactoring that doesn't change visible behavior, the test is testing the wrong thing. I aim for 80% coverage on utility code and critical business logic, but I don't chase coverage percentages on UI components.</p>
+<p class="story-text">Integration tests validate that different parts of the application work together correctly. For the EventPass platform, I wrote integration tests that create a ticket listing, simulate a user purchasing a ticket, and verify that the order appears in the admin dashboard. These tests use MSW (Mock Service Worker) to intercept API requests at the network level, returning realistic responses without hitting the actual database. MSW runs in both the browser and Node.js, allowing the same mock definitions to be used in Vitest tests and Playwright E2E tests. Integration tests are where most regressions are caught — they verify that the component renders correctly with real data, that API calls return expected responses, and that state updates propagate through the component tree. They are slower than unit tests but faster than E2E tests, making them the sweet spot of the testing pyramid.</p>
+<p class="story-text">End-to-end testing with Playwright is the final safety net. Playwright runs real browsers (Chromium, Firefox, WebKit) and simulates actual user interactions. I write E2E tests for critical user journeys: user registration, purchasing a product, checking order status, and admin dashboard workflows. Playwright's codegen tool records interactions and generates test code, which is a great starting point. The tests run against a preview deployment or a local instance with a test database. I use Playwright's trace viewer to debug failures — it captures screenshots, network logs, and console output at each step. The key to maintainable E2E tests is the page object model, which abstracts selectors and interactions into reusable classes. Tests are run in CI for every pull request, and I maintain a suite of smoke tests that run on production every hour to catch deployment issues. A well-balanced testing strategy — unit, integration, and E2E — gives you the confidence to ship fast without breaking things.</p>
+</article>
+
+<div class="post-tags" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:40px;padding-top:30px;border-top:1px solid var(--card-border)">
+<span class="card-tags"><span>Testing</span></span>
+<span class="card-tags"><span>Playwright</span></span>
+<span class="card-tags"><span>Vitest</span></span>
+<span class="card-tags"><span>QA</span></span>
+</div>
+
+<div class="related-posts" style="margin-top:50px;padding-top:30px;border-top:1px solid var(--card-border)">
+<h2 class="section-title" style="margin-bottom:25px">Related <span class="highlight">Posts</span></h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<a href="state-management.html" class="card" style="text-decoration:none;color:inherit;display:block;padding:25px">
+<h3 style="margin-bottom:8px">State Management in React/Next.js</h3>
+<p style="font-size:.9rem;color:var(--text-light)">Test state management logic with controlled, predictable test scenarios.</p>
+<div style="margin-top:12px;color:var(--accent);font-weight:600;font-size:.85rem">Read More →</div>
+</a>
+<a href="deployment-guide.html" class="card" style="text-decoration:none;color:inherit;display:block;padding:25px">
+<h3 style="margin-bottom:8px">Deployment Guide for Next.js Apps</h3>
+<p style="font-size:.9rem;color:var(--text-light)">Run tests in CI before every deployment for production confidence.</p>
+<div style="margin-top:12px;color:var(--accent);font-weight:600;font-size:.85rem">Read More →</div>
+</a>
+</div>
+</div>
+
+<div class="post-cta" style="margin-top:50px;padding:40px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--border-radius);text-align:center">
+<h3 style="font-family:var(--font-heading);margin-bottom:12px">Want to discuss this topic?</h3>
+<p style="color:var(--text-light);margin-bottom:20px">Setting up a testing strategy or need help with test automation? Let's talk.</p>
+<a href="../contact.html" class="btn btn-primary">Let's Talk</a>
+</div>
+</div>
+</section>
+
+<footer id="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="../index.html" class="footer-logo">Aayush Shah</a>
+<p>Full Stack Developer building fast, scalable modern web applications. Based in India.</p>
+<div class="footer-social">
+<a href="https://github.com/AayushShah2007" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<a href="mailto:Aayushshah458@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+<a href="https://wa.me/918369827417" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+<div class="footer-links">
+<h4>Explore</h4>
+<a href="../index.html">Home</a>
+<a href="../about.html">About Me</a>
+<a href="../projects/index.html">Projects</a>
+<a href="../services/index.html">Services</a>
+<a href="index.html">Blog</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-links">
+<h4>Skills</h4>
+<a href="../skills/index.html">All Skills</a>
+<a href="../skills/c.html">C</a>
+<a href="../skills/cpp.html">C++</a>
+<a href="../skills/csharp.html">C#</a>
+<a href="../skills/python.html">Python</a>
+<a href="../skills/javascript.html">JavaScript</a>
+<a href="../skills/html-css.html">HTML &amp; CSS</a>
+<a href="../skills/sql.html">SQL</a>
+<a href="../skills/nextjs.html">Next.js</a>
+</div>
+<div class="footer-links">
+<h4>Projects</h4>
+<a href="../projects/index.html">All Projects</a>
+<a href="../projects/eat-clock.html">EAT O'CLOCK</a>
+<a href="../projects/eventpass.html">EventPass</a>
+<a href="../projects/project-timeline.html">Project Timeline</a>
+<a href="../projects/project-gallery.html">Gallery</a>
+<a href="../projects/project-tech-stack.html">Tech Stack</a>
+<a href="../projects/case-study-eat-clock.html">Case Study: Eat Clock</a>
+<a href="../projects/case-study-eventpass.html">Case Study: EventPass</a>
+</div>
+<div class="footer-links">
+<h4>Resources</h4>
+<a href="../sitemap.html">Sitemap</a>
+<a href="../faq.html">FAQ</a>
+<a href="../hire-me.html">Hire Me</a>
+<a href="../testimonials.html">Testimonials</a>
+<a href="../showcase.html">Showcase</a>
+<a href="../achievements.html">Achievements</a>
+<a href="../privacy-policy.html">Privacy Policy</a>
+<a href="../terms-of-service.html">Terms of Service</a>
+</div>
+<div class="footer-contact">
+<h4>Contact</h4>
+<p><i class="fas fa-envelope"></i> <a href="mailto:Aayushshah458@gmail.com">Aayushshah458@gmail.com</a></p>
+<p><i class="fas fa-phone"></i> <a href="tel:+918369827417">+91 83698 27417</a></p>
+<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918369827417" target="_blank">+91 83698 27417</a></p>
+<p><i class="fab fa-github"></i> <a href="https://github.com/AayushShah2007" target="_blank">AayushShah2007</a></p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>All right reserved to <span style="color:var(--accent)">&copy; Aayush Shah</span></p>
+</div>
+</div>
+</footer>
+
+<div class="floating-contact">
+<a href="https://wa.me/918369827417" target="_blank" class="floating-btn whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="floating-btn call-float"><i class="fas fa-phone"></i></a>
+<button id="back-to-top" class="floating-btn top-float"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

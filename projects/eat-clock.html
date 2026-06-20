@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>EAT O'CLOCK — Aayush Shah</title>
+<meta name="description" content="EAT O'CLOCK restaurant management system — Next.js, Supabase, TypeScript, real-time orders, payments, and admin dashboard.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1f4bb;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="canonical" href="https://aayushshah.dev/projects/eat-clock.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Aayush Shah">
+<meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script></head>
+<body>
+
+<div id="loading-screen"><div class="loading-content"><div class="loading-spinner"></div><p class="loading-text">Loading...</p></div></div>
+<div id="page-transition" style="position:fixed;inset:0;z-index:99999;background:var(--primary);pointer-events:none;opacity:0;transition:opacity .4s"></div>
+<div id="scroll-progress"></div>
+
+<nav id="navbar">
+<div class="nav-container">
+<a href="../index.html" class="nav-logo">Aayush Shah</a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html" class="nav-link">Home</a></li>
+<li><a href="../about.html" class="nav-link">About</a></li>
+<li><a href="../sitemap.html" class="nav-link">Sitemap</a></li>
+<li><a href="index.html" class="nav-link active">Projects</a></li>
+<li><a href="../services/index.html" class="nav-link">Services</a></li>
+<li><a href="../blog/index.html" class="nav-link">Blog</a></li>
+<li><a href="../contact.html" class="nav-link">Contact</a></li>
+</ul>
+<div class="nav-actions">
+<a href="https://wa.me/918369827417" target="_blank" rel="noopener" class="nav-icon-btn whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="nav-icon-btn call-btn"><i class="fas fa-phone"></i></a>
+<a href="../contact.html" class="hire-btn">Hire Me</a>
+<button id="hamburger" class="nav-icon-btn"><i class="fas fa-bars"></i></button>
+</div>
+</div>
+</nav>
+
+<section class="page-header">
+<div class="container">
+<h1>EAT <span class="highlight">O'CLOCK</span></h1>
+<p>Restaurant Management System</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+<div>
+<img src="../assets/images/cafe-management.jpeg" alt="EAT O'CLOCK" style="width:100%;border-radius:var(--border-radius);border:1px solid var(--card-border)">
+<div style="display:flex;gap:15px;margin-top:20px;flex-wrap:wrap">
+<a href="https://eat-o-clock-cafe.vercel.app/" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+<a href="https://github.com/AayushShah2007" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+</div>
+</div>
+<div>
+<h2 class="section-title" style="margin-top:0">About <span class="highlight">the Project</span></h2>
+<p style="color:var(--text-light);line-height:1.8;margin-bottom:20px">A comprehensive restaurant management system built with Next.js 16, Supabase, and TypeScript. Features include menu browsing, shopping cart, order management, multiple payment methods (UPI, Card, Cash), live order tracking, table reservations, customer reviews, and a full admin panel with WebSocket-powered real-time order updates, audio alerts, menu CRUD operations, financial analytics dashboard, coupon management, reservation management, review moderation, and KPI tracking. Authentication via OTP and Google OAuth with role-based access control.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:25px">
+<span class="card-tags" style="padding:8px 16px;background:rgba(212,165,116,.1);border-radius:8px;color:var(--accent);font-size:.85rem;font-weight:600">Next.js 16</span>
+<span class="card-tags" style="padding:8px 16px;background:rgba(212,165,116,.1);border-radius:8px;color:var(--accent);font-size:.85rem;font-weight:600">Supabase</span>
+<span class="card-tags" style="padding:8px 16px;background:rgba(212,165,116,.1);border-radius:8px;color:var(--accent);font-size:.85rem;font-weight:600">TypeScript</span>
+<span class="card-tags" style="padding:8px 16px;background:rgba(212,165,116,.1);border-radius:8px;color:var(--accent);font-size:.85rem;font-weight:600">WebSocket</span>
+<span class="card-tags" style="padding:8px 16px;background:rgba(212,165,116,.1);border-radius:8px;color:var(--accent);font-size:.85rem;font-weight:600">Payments</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section section-alt">
+<div class="container">
+<h2 class="section-title">Key <span class="highlight">Features</span></h2>
+<p class="section-subtitle">What makes EAT O'CLOCK powerful</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:25px">
+<div class="card" style="padding:30px;text-align:center">
+<i class="fas fa-utensils" style="font-size:2.5rem;color:var(--accent);margin-bottom:15px"></i>
+<h3>Menu Browsing</h3>
+<p style="color:var(--text-light);font-size:.9rem">Dynamic menu with categories, search, and filtering for seamless customer browsing.</p>
+</div>
+<div class="card" style="padding:30px;text-align:center">
+<i class="fas fa-shopping-cart" style="font-size:2.5rem;color:var(--accent);margin-bottom:15px"></i>
+<h3>Shopping Cart</h3>
+<p style="color:var(--text-light);font-size:.9rem">Add items, modify quantities, and review orders before checkout.</p>
+</div>
+<div class="card" style="padding:30px;text-align:center">
+<i class="fas fa-credit-card" style="font-size:2.5rem;color:var(--accent);margin-bottom:15px"></i>
+<h3>Multiple Payments</h3>
+<p style="color:var(--text-light);font-size:.9rem">Support for UPI, debit/credit cards, and cash payments.</p>
+</div>
+<div class="card" style="padding:30px;text-align:center">
+<i class="fas fa-map-marker-alt" style="font-size:2.5rem;color:var(--accent);margin-bottom:15px"></i>
+<h3>Live Order Tracking</h3>
+<p style="color:var(--text-light);font-size:.9rem">Real-time order status updates from preparation to delivery.</p>
+</div>
+<div class="card" style="padding:30px;text-align:center">
+<i class="fas fa-calendar-check" style="font-size:2.5rem;color:var(--accent);margin-bottom:15px"></i>
+<h3>Table Reservations</h3>
+<p style="color:var(--text-light);font-size:.9rem">Customers can reserve tables with date, time, and party size.</p>
+</div>
+<div class="card" style="padding:30px;text-align:center">
+<i class="fas fa-chart-line" style="font-size:2.5rem;color:var(--accent);margin-bottom:15px"></i>
+<h3>Admin Dashboard</h3>
+<p style="color:var(--text-light);font-size:.9rem">KPI tracking, financial analytics, order management, and coupon control.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Tech <span class="highlight">Stack</span></h2>
+<p class="section-subtitle">Built with modern, scalable technologies</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px">
+<div class="card" style="padding:25px;text-align:center"><i class="devicon-nextjs-plain" style="font-size:2.5rem;color:var(--text)"></i><h3 style="margin-top:10px;font-size:1rem">Next.js 16</h3></div>
+<div class="card" style="padding:25px;text-align:center"><i class="devicon-react-original colored" style="font-size:2.5rem"></i><h3 style="margin-top:10px;font-size:1rem">React</h3></div>
+<div class="card" style="padding:25px;text-align:center"><i class="devicon-typescript-plain colored" style="font-size:2.5rem"></i><h3 style="margin-top:10px;font-size:1rem">TypeScript</h3></div>
+<div class="card" style="padding:25px;text-align:center"><i class="devicon-supabase-plain" style="font-size:2.5rem;color:#3ecf8e"></i><h3 style="margin-top:10px;font-size:1rem">Supabase</h3></div>
+<div class="card" style="padding:25px;text-align:center"><i class="devicon-postgresql-plain colored" style="font-size:2.5rem"></i><h3 style="margin-top:10px;font-size:1rem">PostgreSQL</h3></div>
+<div class="card" style="padding:25px;text-align:center"><i class="devicon-tailwindcss-plain colored" style="font-size:2.5rem"></i><h3 style="margin-top:10px;font-size:1rem">Tailwind CSS</h3></div>
+</div>
+</div>
+</section>
+
+<section class="section section-alt" style="text-align:center">
+<div class="container">
+<h2 class="section-title">Explore More <span class="highlight">Projects</span></h2>
+<p class="section-subtitle" style="margin-bottom:30px">Check out other projects or read the detailed case study</p>
+<div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap">
+<a href="eventpass.html" class="btn btn-secondary">EventPass <i class="fas fa-arrow-right"></i></a>
+<a href="case-study-eat-clock.html" class="btn btn-primary">Read Case Study <i class="fas fa-arrow-right"></i></a>
+<a href="index.html" class="btn btn-secondary">All Projects <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</section>
+
+<footer id="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="../index.html" class="footer-logo">Aayush Shah</a>
+<p>Full Stack Developer building fast, scalable modern web applications. Based in India.</p>
+<div class="footer-social">
+<a href="https://github.com/AayushShah2007" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<a href="mailto:Aayushshah458@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+<a href="https://wa.me/918369827417" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+<div class="footer-links">
+<h4>Explore</h4>
+<a href="../index.html">Home</a>
+<a href="../about.html">About Me</a>
+<a href="index.html">Projects</a>
+<a href="../services/index.html">Services</a>
+<a href="../blog/index.html">Blog</a>
+<a href="../contact.html">Contact</a>
+</div>
+<div class="footer-links">
+<h4>Skills</h4>
+<a href="../skills/index.html">All Skills</a>
+<a href="../skills/c.html">C</a>
+<a href="../skills/cpp.html">C++</a>
+<a href="../skills/csharp.html">C#</a>
+<a href="../skills/python.html">Python</a>
+<a href="../skills/javascript.html">JavaScript</a>
+<a href="../skills/html-css.html">HTML &amp; CSS</a>
+<a href="../skills/sql.html">SQL</a>
+<a href="../skills/nextjs.html">Next.js</a>
+</div>
+<div class="footer-links">
+<h4>Projects</h4>
+<a href="index.html">All Projects</a>
+<a href="eat-clock.html">EAT O'CLOCK</a>
+<a href="eventpass.html">EventPass</a>
+<a href="project-timeline.html">Project Timeline</a>
+<a href="project-gallery.html">Gallery</a>
+<a href="project-tech-stack.html">Tech Stack</a>
+<a href="case-study-eat-clock.html">Case Study: Eat Clock</a>
+<a href="case-study-eventpass.html">Case Study: EventPass</a>
+</div>
+<div class="footer-links">
+<h4>Resources</h4>
+<a href="../sitemap.html">Sitemap</a>
+<a href="../faq.html">FAQ</a>
+<a href="../hire-me.html">Hire Me</a>
+<a href="../testimonials.html">Testimonials</a>
+<a href="../showcase.html">Showcase</a>
+<a href="../achievements.html">Achievements</a>
+<a href="../privacy-policy.html">Privacy Policy</a>
+<a href="../terms-of-service.html">Terms of Service</a>
+</div>
+<div class="footer-contact">
+<h4>Contact</h4>
+<p><i class="fas fa-envelope"></i> <a href="mailto:Aayushshah458@gmail.com">Aayushshah458@gmail.com</a></p>
+<p><i class="fas fa-phone"></i> <a href="tel:+918369827417">+91 83698 27417</a></p>
+<p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918369827417" target="_blank">+91 83698 27417</a></p>
+<p><i class="fab fa-github"></i> <a href="https://github.com/AayushShah2007" target="_blank">AayushShah2007</a></p>
+</div>
+</div>
+<div class="footer-bottom">
+<p>All right reserved to <span style="color:var(--accent)">&copy; Aayush Shah</span></p>
+</div>
+</div>
+</footer>
+
+<div class="floating-contact">
+<a href="https://wa.me/918369827417" target="_blank" class="floating-btn whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+918369827417" class="floating-btn call-float"><i class="fas fa-phone"></i></a>
+<button id="back-to-top" class="floating-btn top-float"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
