@@ -29,7 +29,6 @@ window.addEventListener('scroll',()=>{
   if(fc)fc.classList.toggle('hidden',sy>=footerTop);
 });
 window.dispatchEvent(new Event('scroll')); // initial check
-<<<<<<< HEAD
 function closeNav(){
   nl.classList.remove('open');
   const ov=document.querySelector('.nav-overlay');
@@ -54,14 +53,6 @@ if(hb){
   });
 }
 ni.forEach(l=>l.addEventListener('click',closeNav));
-=======
-if(hb){
-  const closeMenu=()=>{nl.classList.remove('open');hb.innerHTML='<i class="fas fa-bars"></i>';document.body.classList.remove('nav-open')};
-  hb.addEventListener('click',()=>{nl.classList.toggle('open');hb.innerHTML=nl.classList.contains('open')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';document.body.classList.toggle('nav-open',nl.classList.contains('open'))});
-  ni.forEach(l=>l.addEventListener('click',closeMenu));
-  document.addEventListener('click',(e)=>{if(nl&&nl.classList.contains('open')&&!e.target.closest('#navbar'))closeMenu()});
-}
->>>>>>> a98b090 (fix mobile: ch2 overlap, visuals sizing, hamburger styling, footer stacking)
 
 
 // === LOADING ===
