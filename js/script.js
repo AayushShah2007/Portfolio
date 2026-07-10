@@ -81,6 +81,12 @@ const btt=document.getElementById('back-to-top');if(btt)btt.addEventListener('cl
 // === PAGE TRANSITION ===
 document.querySelectorAll('a[href]:not([href^="#"]):not([href^="http"]):not([href^="mailto"]):not([href^="tel"]):not([href^="https"]):not([href^="wa.me"])').forEach(a=>{const h=a.getAttribute('href');if(h&&h.endsWith('.html')&&!h.startsWith('http')){a.addEventListener('click',function(e){e.preventDefault();const t=this.getAttribute('href');const tr=document.getElementById('page-transition');if(tr){tr.style.opacity='1';setTimeout(()=>{window.location.href=t},400)}else{window.location.href=t}})}});
 
+// === RESET PAGE TRANSITION on back/forward cache restore ===
+window.addEventListener('pageshow',()=>{
+  const tr=document.getElementById('page-transition');
+  if(tr)tr.style.opacity='0';
+});
+
 // === ACTIVE NAV ON PAGE LOAD ===
 const cp=window.location.pathname.split('/').pop()||'index.html';
 ni.forEach(l=>{const h=l.getAttribute('href');if(h===cp)l.classList.add('active')});
